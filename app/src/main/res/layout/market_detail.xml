@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_medium">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <com.padc.cooking.components.textviews.MMTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="4dp"
+                android:fontFamily="sans-serif"
+                android:paddingLeft="@dimen/margin_medium_2"
+                android:text="Description"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textStyle="bold" />
+
+
+            <com.padc.cooking.components.textviews.MMTextView
+                android:id="@+id/tv_market_description"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/margin_medium_2"
+                android:layout_marginTop="4dp"
+                android:lineSpacingMultiplier="1.3"
+                android:padding="@dimen/margin_medium"
+                android:text="#ကြ်န္ေတာ္တို႕ခ်စ္တဲ႕လြယ္အိပ္ႀကီးနဲဲ႔အတူဝုန္းျကဆို႕……"
+                android:textColor="#000"
+                android:textSize="@dimen/text_regular_2" />
+
+        </LinearLayout>
+
+    </android.support.v7.widget.CardView>
+
+    <android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_medium">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <com.padc.cooking.components.textviews.MMTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="4dp"
+                android:fontFamily="sans-serif"
+                android:paddingLeft="@dimen/margin_medium_2"
+                android:text="Location"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textStyle="bold" />
+
+
+            <com.padc.cooking.components.textviews.MMTextView
+                android:id="@+id/tv_market_location"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/margin_medium_2"
+                android:layout_marginTop="4dp"
+                android:lineSpacingMultiplier="1.3"
+                android:padding="@dimen/margin_medium"
+                android:text="#ကြ်န္ေတာ္တို႕ခ်စ္တဲ႕လြယ္အိပ္ႀကီးနဲဲ႔အတူဝုန္းျကဆို႕……"
+                android:textColor="#000"
+                android:textSize="@dimen/text_regular_2" />
+
+        </LinearLayout>
+
+    </android.support.v7.widget.CardView>
+
+    <android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_medium">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <com.padc.cooking.components.textviews.MMTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="4dp"
+                android:fontFamily="sans-serif"
+                android:paddingLeft="@dimen/margin_medium_2"
+                android:text="Website"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textStyle="bold" />
+
+
+            <com.padc.cooking.components.textviews.MMTextView
+                android:id="@+id/tv_website_address"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/margin_medium_2"
+                android:layout_marginTop="4dp"
+                android:lineSpacingMultiplier="1.3"
+                android:padding="@dimen/margin_medium"
+                android:text="#ကြ်န္ေတာ္တို႕ခ်စ္တဲ႕လြယ္အိပ္ႀကီးနဲဲ႔အတူဝုန္းျကဆို႕……"
+                android:textColor="#000"
+                android:textSize="@dimen/text_regular_2" />
+
+        </LinearLayout>
+
+    </android.support.v7.widget.CardView>
+
+    <android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_medium">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <com.padc.cooking.components.textviews.MMTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="4dp"
+                android:fontFamily="sans-serif"
+                android:paddingLeft="@dimen/margin_medium_2"
+                android:text="About Market"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textStyle="bold" />
+
+            <com.padc.cooking.components.textviews.MMTextView
+                android:id="@+id/tv_about_market"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/margin_medium_2"
+                android:layout_marginTop="4dp"
+                android:ellipsize="end"
+                android:lineSpacingMultiplier="1.3"
+                android:maxLines="5"
+                android:padding="@dimen/margin_medium"
+                android:text="#ကြ်န္ေတာ္တို႕ခ်စ္တဲ႕လြယ္အိပ္ႀကီးနဲဲ႔အတူဝုန္းျကဆို႕……"
+                android:textColor="#000"
+                android:textSize="@dimen/text_regular_2" />
+
+            <Button
+                android:id="@+id/btn_read_more_about_market"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:background="#fff"
+                android:text="@string/read_more"
+                android:textAllCaps="false" />
+
+        </LinearLayout>
+
+    </android.support.v7.widget.CardView>
+
+</LinearLayout>

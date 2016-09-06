@@ -1,4 +1,25 @@
 <resources>
     <string name="app_name">Cooking</string>
     <string name="action_settings">Settings</string>
+    <string name="title_activity_main">MainActivity</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <!-- Tabs Title -->
+    <string name="myanmar_food">Myanmar Food</string>
+    <string name="chinese_food">Chinese Food</string>
+
+    <!-- Spinner Category -->
+    <string-array name="category">
+        <item>Chicken</item>
+        <item>Pork</item>
+        <item>Vegetable</item>
+        <item>Snacks</item>
+    </string-array>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="read_more">Read More</string>
+
 </resources>
