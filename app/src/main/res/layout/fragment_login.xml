@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/primary">
+
+    <EditText
+        android:id="@+id/inputemail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/margin_medium_2"
+        android:layout_marginRight="@dimen/margin_medium_2"
+        android:layout_marginTop="@dimen/margin_medium_2"
+        android:background="@drawable/bg_rounded_dialog_button"
+        android:editable="true"
+        android:hint="Email"
+        android:maxLines="1"
+        android:padding="@dimen/margin_medium"
+        android:singleLine="true"
+        android:textColor="@color/text_black_ish"
+        android:textColorHint="@color/text_black_ish"
+        android:textSize="16sp" />
+
+    <EditText
+        android:id="@+id/inputpwd"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/margin_medium_2"
+        android:layout_marginRight="@dimen/margin_medium_2"
+        android:layout_marginTop="@dimen/margin_medium_2"
+        android:background="@drawable/bg_rounded_dialog_button"
+        android:editable="true"
+        android:hint="Password"
+        android:maxLines="1"
+        android:padding="@dimen/margin_medium"
+        android:singleLine="true"
+        android:textColor="@color/text_black_ish"
+        android:textColorHint="@color/text_black_ish"
+        android:textSize="16sp" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="right"
+        android:layout_marginLeft="@dimen/margin_medium_2"
+        android:layout_marginRight="@dimen/margin_medium_2"
+        android:layout_marginTop="@dimen/margin_medium_2"
+        android:orientation="horizontal">
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Cancel" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Login"
+            />
+
+    </LinearLayout>
+
+
+
+</LinearLayout>
