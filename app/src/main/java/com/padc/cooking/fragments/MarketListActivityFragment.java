@@ -1,15 +1,15 @@
 package com.padc.cooking.fragments;
 
 
-import android.app.Fragment;
+
+import android.content.Context;
 import android.os.Bundle;
+import android.support.v4.app.Fragment;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
-import android.widget.LinearLayout;
 
 import com.padc.cooking.CookingApp;
 import com.padc.cooking.R;
@@ -17,7 +17,7 @@ import com.padc.cooking.VO.MarketListVO;
 import com.padc.cooking.adapters.MarketRVAdapter;
 import com.padc.cooking.views.holders.MarketViewHolder;
 
-import java.util.List;
+import java.util.ArrayList;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -25,7 +25,7 @@ import butterknife.ButterKnife;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class MarketListActivityFragment extends android.app.Fragment {
+public class MarketListActivityFragment extends Fragment {
 
 
     @BindView(R.id.rv_markets)
@@ -33,9 +33,7 @@ public class MarketListActivityFragment extends android.app.Fragment {
 
     private MarketRVAdapter mMarketRVAdapter;
 
-    private MarketViewHolder.ControllerAttractionItem controllerAttractionItem;
-
-
+    private MarketViewHolder.ControllerMarketItem controllerMarketItem;
 
     public static MarketListActivityFragment newInstance() {
         MarketListActivityFragment fragment = new MarketListActivityFragment();
@@ -49,10 +47,19 @@ public class MarketListActivityFragment extends android.app.Fragment {
         View rootView =inflater.inflate(R.layout.fragment_market_list_activity,container,false);
         ButterKnife.bind(this, rootView);
 
-        mMarketRVAdapter = new MarketRVAdapter(null,controllerAttractionItem);
+        ArrayList<MarketListVO> dummyDatas = new ArrayList<>();
+
+        dummyDatas.add(new MarketListVO("Name", "Address", 2));
+
+        mMarketRVAdapter = new MarketRVAdapter(dummyDatas, controllerMarketItem);
         rvMarkets.setAdapter(mMarketRVAdapter);
         rvMarkets.setLayoutManager(new GridLayoutManager(CookingApp.getContext(),1));
         return rootView;
     }
 
+    @Override
+    public void onAttach(Context context) {
+        super.onAttach(context);
+        controllerMarketItem = (MarketViewHolder.ControllerMarketItem) context;
+    }
 }

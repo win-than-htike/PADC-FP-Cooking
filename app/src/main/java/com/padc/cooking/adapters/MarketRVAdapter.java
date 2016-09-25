@@ -4,7 +4,6 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.BaseAdapter;
 
 import com.padc.cooking.CookingApp;
 import com.padc.cooking.R;
@@ -23,10 +22,10 @@ public class MarketRVAdapter extends RecyclerView.Adapter<MarketViewHolder> {
 
     private List<MarketListVO> mmarketList;
     private LayoutInflater minflater;
-    private MarketViewHolder.ControllerAttractionItem mControllerAttractionItem;
+    private MarketViewHolder.ControllerMarketItem mControllerMarketItem;
 
 
-    public MarketRVAdapter(List<MarketListVO> marketList, MarketViewHolder.ControllerAttractionItem controllerAttractionItem) {
+    public MarketRVAdapter(List<MarketListVO> marketList, MarketViewHolder.ControllerMarketItem controllerMarketItem) {
         if (marketList != null) {
             this.mmarketList = marketList;
         } else {
@@ -34,7 +33,7 @@ public class MarketRVAdapter extends RecyclerView.Adapter<MarketViewHolder> {
         }
         minflater = LayoutInflater.from(CookingApp.getContext());
         mmarketList = marketList ;
-        mControllerAttractionItem=controllerAttractionItem;
+        mControllerMarketItem = controllerMarketItem;
     }
 
 
@@ -42,13 +41,13 @@ public class MarketRVAdapter extends RecyclerView.Adapter<MarketViewHolder> {
     public MarketViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
 
         View itemView = minflater.inflate(R.layout.market_list_row, parent, false);
-        return new MarketViewHolder(itemView, mControllerAttractionItem);
+        return new MarketViewHolder(itemView, mControllerMarketItem);
     }
 
     @Override
     public void onBindViewHolder(MarketViewHolder holder, int position) {
 
-        holder.bindData();
+        holder.bindData(mmarketList.get(position));
 
     }
 
@@ -59,7 +58,7 @@ public class MarketRVAdapter extends RecyclerView.Adapter<MarketViewHolder> {
 
     @Override
     public int getItemCount() {
-        return 5;
+        return mmarketList.size();
 
     }
 

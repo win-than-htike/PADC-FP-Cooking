@@ -14,7 +14,7 @@ public class MarketListVO {
     String maddress;
     int mphoto;
 
-    MarketListVO(String mname, String maddress, int mphoto) {
+    public MarketListVO(String mname, String maddress, int mphoto) {
         this.mname = mname;
         this.maddress = maddress;
         this.mphoto = mphoto;

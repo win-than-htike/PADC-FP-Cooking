@@ -22,8 +22,11 @@ import android.widget.Toast;
 
 import com.padc.cooking.CookingApp;
 import com.padc.cooking.R;
+import com.padc.cooking.VO.MarketListVO;
 import com.padc.cooking.controllers.FoodItemController;
 import com.padc.cooking.fragments.HomeFragment;
+import com.padc.cooking.fragments.MarketListActivityFragment;
+import com.padc.cooking.views.holders.MarketViewHolder;
 
 import org.w3c.dom.Text;
 
@@ -31,7 +34,7 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 
 public class MainActivity extends AppCompatActivity
-        implements NavigationView.OnNavigationItemSelectedListener,FoodItemController {
+        implements NavigationView.OnNavigationItemSelectedListener,FoodItemController,MarketViewHolder.ControllerMarketItem  {
 
     @BindView(R.id.toolbar_spinner)
     Spinner toolbatSpinnerCategory;
@@ -131,17 +134,13 @@ public class MainActivity extends AppCompatActivity
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
-        if (id == R.id.nav_camera) {
-            // Handle the camera action
-        } else if (id == R.id.nav_gallery) {
+        if (id == R.id.nav_reciepe) {
+            navigateToReciepe();
+        } else if (id == R.id.nav_market) {
+            navigateToMarket();
+        } else if (id == R.id.nav_news) {
 
-        } else if (id == R.id.nav_slideshow) {
-
-        } else if (id == R.id.nav_manage) {
-
-        } else if (id == R.id.nav_share) {
-
-        } else if (id == R.id.nav_send) {
+        } else if (id == R.id.nav_fav) {
 
         }
 
@@ -150,6 +149,21 @@ public class MainActivity extends AppCompatActivity
         return true;
     }
 
+    private void navigateToMarket() {
+        MarketListActivityFragment fragment = new MarketListActivityFragment();
+        getSupportFragmentManager()
+                .beginTransaction()
+                .replace(R.id.fl_container,fragment,"Market")
+                .commit();
+    }
+
+    private void navigateToReciepe() {
+        HomeFragment homeFragment = new HomeFragment();
+        getSupportFragmentManager()
+                .beginTransaction()
+                .replace(R.id.fl_container,homeFragment,"Home")
+                .commit();
+    }
 
 
     @Override
@@ -159,5 +173,10 @@ public class MainActivity extends AppCompatActivity
 
 
 
+    }
+
+    @Override
+    public void onTapMarket(MarketListVO market) {
+        startActivity(MarketActivity.newIntent());
     }
 }

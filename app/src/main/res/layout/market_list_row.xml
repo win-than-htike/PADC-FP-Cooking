@@ -1,47 +1,46 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent" android:layout_height="match_parent"
-    android:padding="16dp"
-    >
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingLeft="8dp"
+    android:paddingRight="8dp">
 
     <android.support.v7.widget.CardView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
         android:id="@+id/cardview"
-        >
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
 
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:padding="16dp"
-            >
+            android:padding="16dp">
 
             <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
                 android:id="@+id/m_photo"
+                android:layout_width="128dp"
+                android:layout_height="128dp"
                 android:layout_alignParentLeft="true"
                 android:layout_alignParentTop="true"
                 android:layout_marginRight="16dp"
-                android:src="@drawable/m_akk"
-                />
+                android:src="@drawable/m_akk" />
 
             <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
                 android:id="@+id/m_name"
-                android:layout_toRightOf="@+id/m_photo"
-                android:layout_alignParentTop="true"
-                android:textSize="30sp"
-                />
-
-            <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/m_address"
+                android:layout_alignParentTop="true"
                 android:layout_toRightOf="@+id/m_photo"
+                android:textSize="30sp"
+                tools:text="Name" />
+
+            <TextView
+                android:id="@+id/m_address"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:layout_below="@+id/m_name"
-                />
+                android:layout_toRightOf="@+id/m_photo"
+                tools:text="Loreum Ipsum" />
 
         </RelativeLayout>
 

@@ -16,7 +16,7 @@ import butterknife.ButterKnife;
 /**
  * Created by Su Su Oo on 17-Sep-16.
  */
-public class MarketViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
+public class MarketViewHolder extends RecyclerView.ViewHolder{
 
    @BindView(R.id.m_photo)
     ImageView marketphoto;
@@ -28,19 +28,23 @@ public class MarketViewHolder extends RecyclerView.ViewHolder implements View.On
     TextView marketaddress;
 
     private MarketListVO mMarket;
-    private ControllerAttractionItem mController;
+    private ControllerMarketItem mController;
 
 
-    public MarketViewHolder(View itemView,ControllerAttractionItem controller){
+    public MarketViewHolder(View itemView,ControllerMarketItem controller){
 
         super(itemView);
         ButterKnife.bind(this,itemView);
-        itemView.setOnClickListener(this);
         mController = controller;
     }
 
-    public void bindData(){
-       // mMarket=Market;
+    public void bindData(final MarketListVO mMarket){
+        itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                mController.onTapMarket(mMarket);
+            }
+        });
         marketname.setText("47th Street Branch");
         marketaddress.setText("Corner of 47th Street & Anawrahta Road, Botahtaung Township, Yangon");
 
@@ -62,16 +66,16 @@ public class MarketViewHolder extends RecyclerView.ViewHolder implements View.On
 
 
 
-    @Override
-    public void onClick(View view) {
+//    @Override
+//    public void onClick(View view) {
+//
+//        mController.onTapMarket(mMarket);
+//
+//    }
 
-        mController.onTapAttraction(mMarket,marketphoto);
 
-    }
-
-
-    public interface ControllerAttractionItem {
-        void onTapAttraction(MarketListVO market, ImageView marketphoto);
+    public interface ControllerMarketItem {
+        void onTapMarket(MarketListVO market);
     }
 
 }
