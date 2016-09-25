@@ -1,6 +1,7 @@
 package com.padc.cooking.fragments;
 
 
+import android.content.Context;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -14,6 +15,7 @@ import android.widget.TextView;
 import com.padc.cooking.CookingApp;
 import com.padc.cooking.R;
 import com.padc.cooking.adapters.RecipeRVAdapter;
+import com.padc.cooking.controllers.FoodItemController;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -22,6 +24,9 @@ import butterknife.ButterKnife;
  * A simple {@link Fragment} subclass.
  */
 public class ChineseFragment extends Fragment {
+
+
+    private FoodItemController mController;
 
     @BindView(R.id.rv_chinese_food)
     RecyclerView rvChineseFood;
@@ -51,10 +56,15 @@ public class ChineseFragment extends Fragment {
         rvChineseFood.setLayoutManager(new LinearLayoutManager(CookingApp.getContext(),LinearLayoutManager.VERTICAL,false));
 
         // attach adapter in recycler view
-        mAdapter = new RecipeRVAdapter();
+        mAdapter = new RecipeRVAdapter(mController);
         rvChineseFood.setAdapter(mAdapter);
 
         return view;
     }
 
+    @Override
+    public void onAttach(Context context) {
+        super.onAttach(context);
+        mController = (FoodItemController) context;
+    }
 }
