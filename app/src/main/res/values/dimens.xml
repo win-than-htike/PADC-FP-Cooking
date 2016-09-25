@@ -41,4 +41,6 @@
     <dimen name="dialog_button_height">35dp</dimen>
     <dimen name="pb_dimen">55dp</dimen>
 
+    <dimen name="login">8dp</dimen>
+
 </resources>

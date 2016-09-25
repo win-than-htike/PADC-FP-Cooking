@@ -27,6 +27,9 @@
 
     <!--Spinner -->
     <string name="country_prompt">Choose a country</string>
+    <string name="lbl_login">Login</string>
+    <string name="lbl_register">Register</string>
+    <string name="lbl_logout">Logout</string>
     <string-array name="country_arrays">
         <item>Myanmar</item>
         <item>United States</item>

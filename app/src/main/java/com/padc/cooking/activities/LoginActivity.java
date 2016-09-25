@@ -1,5 +1,6 @@
 package com.padc.cooking.activities;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.design.widget.TabLayout;
@@ -7,6 +8,7 @@ import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 
+import com.padc.cooking.CookingApp;
 import com.padc.cooking.R;
 import com.padc.cooking.adapters.LoginPagerAdapter;
 
@@ -18,6 +20,8 @@ public class LoginActivity extends AppCompatActivity implements TabLayout.OnTabS
     private Toolbar toolbar;
     private TabLayout tabLayout;
     private ViewPager viewPager;
+
+    private static final String IE_NAVIGATE_TO = "IE_NAVIGATE_TO";
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -51,6 +55,13 @@ public class LoginActivity extends AppCompatActivity implements TabLayout.OnTabS
 
 
     }
+
+    public static Intent newIntent() {
+        Intent intent = new Intent(CookingApp.getContext(), LoginActivity.class);
+        //intent.putExtra(IE_NAVIGATE_TO, navigateTo);
+        return intent;
+    }
+
 
     @Override
     public void onTabSelected(TabLayout.Tab tab) {

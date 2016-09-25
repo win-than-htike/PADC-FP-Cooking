@@ -24,8 +24,10 @@ import com.padc.cooking.CookingApp;
 import com.padc.cooking.R;
 import com.padc.cooking.VO.MarketListVO;
 import com.padc.cooking.controllers.FoodItemController;
+import com.padc.cooking.controllers.UserController;
 import com.padc.cooking.fragments.HomeFragment;
 import com.padc.cooking.fragments.MarketListActivityFragment;
+import com.padc.cooking.pods.ViewPodAccountControl;
 import com.padc.cooking.views.holders.MarketViewHolder;
 
 import org.w3c.dom.Text;
@@ -34,23 +36,26 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 
 public class MainActivity extends AppCompatActivity
-        implements NavigationView.OnNavigationItemSelectedListener,FoodItemController,MarketViewHolder.ControllerMarketItem  {
+        implements NavigationView.OnNavigationItemSelectedListener, FoodItemController, MarketViewHolder.ControllerMarketItem,
+        UserController {
 
     @BindView(R.id.toolbar_spinner)
     Spinner toolbatSpinnerCategory;
 
-    @Override
+    ViewPodAccountControl viewPodAccountControl;
+
+
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        ButterKnife.bind(this,this);
+        ButterKnife.bind(this, this);
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayShowTitleEnabled(false);
 
         // spinner adapter with string array (setup)
-        SpinnerAdapter mSpinnerAdapter = ArrayAdapter.createFromResource(CookingApp.getContext(),R.array.category,R.layout.toolbar_spinner_dropdown_item);
+        SpinnerAdapter mSpinnerAdapter = ArrayAdapter.createFromResource(CookingApp.getContext(), R.array.category, R.layout.toolbar_spinner_dropdown_item);
         toolbatSpinnerCategory.setAdapter(mSpinnerAdapter);
 
         // listen chose item in spinner
@@ -58,7 +63,7 @@ public class MainActivity extends AppCompatActivity
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
 
-                Toast.makeText(getApplicationContext(),adapterView.getItemAtPosition(i).toString(),Toast.LENGTH_SHORT).show();
+                Toast.makeText(getApplicationContext(), adapterView.getItemAtPosition(i).toString(), Toast.LENGTH_SHORT).show();
 
             }
 
@@ -77,11 +82,11 @@ public class MainActivity extends AppCompatActivity
             }
         });
 
-        if (savedInstanceState == null){
+        if (savedInstanceState == null) {
             HomeFragment homeFragment = new HomeFragment();
             getSupportFragmentManager()
                     .beginTransaction()
-                    .replace(R.id.fl_container,homeFragment,"Home")
+                    .replace(R.id.fl_container, homeFragment, "Home")
                     .commit();
         }
 
@@ -94,6 +99,9 @@ public class MainActivity extends AppCompatActivity
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+
+        viewPodAccountControl = (ViewPodAccountControl) navigationView.getHeaderView(0);
+        viewPodAccountControl.setUserController(this);
     }
 
     @Override
@@ -153,7 +161,7 @@ public class MainActivity extends AppCompatActivity
         MarketListActivityFragment fragment = new MarketListActivityFragment();
         getSupportFragmentManager()
                 .beginTransaction()
-                .replace(R.id.fl_container,fragment,"Market")
+                .replace(R.id.fl_container, fragment, "Market")
                 .commit();
     }
 
@@ -161,7 +169,7 @@ public class MainActivity extends AppCompatActivity
         HomeFragment homeFragment = new HomeFragment();
         getSupportFragmentManager()
                 .beginTransaction()
-                .replace(R.id.fl_container,homeFragment,"Home")
+                .replace(R.id.fl_container, homeFragment, "Home")
                 .commit();
     }
 
@@ -172,11 +180,32 @@ public class MainActivity extends AppCompatActivity
         startActivity(FoodDetailActivity.newIntent());
 
 
-
     }
 
     @Override
     public void onTapMarket(MarketListVO market) {
         startActivity(MarketActivity.newIntent());
+    }
+
+    @Override
+    public void onTapLogin() {
+        Intent intent = LoginActivity.newIntent();
+        startActivity(intent);
+    }
+
+
+    @Override
+    public void onTapRegister() {
+
+    }
+
+    @Override
+    public void onTapLogout() {
+
+    }
+
+    @Override
+    public void onNavigateUserProfile() {
+
     }
 }
