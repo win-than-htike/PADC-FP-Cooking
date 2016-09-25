@@ -5,6 +5,7 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 import com.padc.cooking.R;
+import com.padc.cooking.controllers.FoodItemController;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -20,13 +21,24 @@ public class RecipeViewHolder extends RecyclerView.ViewHolder {
     @BindView(R.id.tv_food_name)
     TextView tvFoodName;
 
-    public RecipeViewHolder(View itemView) {
+    private FoodItemController mController;
+
+    public RecipeViewHolder(View itemView, final FoodItemController controller) {
         super(itemView);
         ButterKnife.bind(this,itemView);
+        mController = controller;
+        itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                controller.onTapFoodItem();
+            }
+        });
+
 
     }
 
     public void dataBind(){
+
 
     }
 

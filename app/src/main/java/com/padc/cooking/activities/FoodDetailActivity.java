@@ -1,5 +1,6 @@
 package com.padc.cooking.activities;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -11,6 +12,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 
+import com.padc.cooking.CookingApp;
 import com.padc.cooking.R;
 import com.padc.cooking.adapters.FoodDetailPagerAdapter;
 
@@ -85,5 +87,11 @@ public class FoodDetailActivity extends AppCompatActivity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    public static Intent newIntent() {
+        Intent intent = new Intent(CookingApp.getContext(), FoodDetailActivity.class);
+//        intent.putExtra(IE_NAVIGATE_TO, navigateTo);
+        return intent;
     }
 }

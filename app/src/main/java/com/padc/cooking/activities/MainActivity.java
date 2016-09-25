@@ -1,5 +1,6 @@
 package com.padc.cooking.activities;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -21,6 +22,7 @@ import android.widget.Toast;
 
 import com.padc.cooking.CookingApp;
 import com.padc.cooking.R;
+import com.padc.cooking.controllers.FoodItemController;
 import com.padc.cooking.fragments.HomeFragment;
 
 import org.w3c.dom.Text;
@@ -29,7 +31,7 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 
 public class MainActivity extends AppCompatActivity
-        implements NavigationView.OnNavigationItemSelectedListener {
+        implements NavigationView.OnNavigationItemSelectedListener,FoodItemController {
 
     @BindView(R.id.toolbar_spinner)
     Spinner toolbatSpinnerCategory;
@@ -146,5 +148,16 @@ public class MainActivity extends AppCompatActivity
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
+    }
+
+
+
+    @Override
+    public void onTapFoodItem() {
+
+        startActivity(FoodDetailActivity.newIntent());
+
+
+
     }
 }

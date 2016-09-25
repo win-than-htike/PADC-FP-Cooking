@@ -7,6 +7,7 @@ import android.view.ViewGroup;
 
 import com.padc.cooking.CookingApp;
 import com.padc.cooking.R;
+import com.padc.cooking.controllers.FoodItemController;
 import com.padc.cooking.views.holders.RecipeViewHolder;
 
 /**
@@ -15,15 +16,19 @@ import com.padc.cooking.views.holders.RecipeViewHolder;
 public class RecipeRVAdapter extends RecyclerView.Adapter<RecipeViewHolder> {
 
     private LayoutInflater inflater;
+    private FoodItemController mController;
 
-    public RecipeRVAdapter() {
-            inflater = LayoutInflater.from(CookingApp.getContext());
+
+    public RecipeRVAdapter(FoodItemController mController) {
+        this.mController = mController;
+        inflater = LayoutInflater.from(CookingApp.getContext());
     }
 
     @Override
     public RecipeViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View view = inflater.inflate(R.layout.list_item_card,parent,false);
-        return new RecipeViewHolder(view);
+        return new RecipeViewHolder(view,mController);
+
     }
 
     @Override
