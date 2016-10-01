@@ -20,7 +20,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="200dp"
                 android:scaleType="centerCrop"
-                android:src="@drawable/khaing"/>
+                android:src="@drawable/buu_thee"/>
 
             <View
                 android:layout_width="match_parent"
@@ -32,7 +32,7 @@
                 android:id="@+id/tv_food_name"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Khain Khain Kyaw"
+                android:text="@string/recipe_name"
                 android:textStyle="bold"
                 android:layout_marginBottom="@dimen/margin_medium"
                 android:textAppearance="?android:attr/textAppearanceLarge"

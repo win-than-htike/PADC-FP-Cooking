@@ -3,10 +3,55 @@
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <ImageView
-        android:id="@+id/meal"
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/reciepe_rv"
         android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+    </android.support.v7.widget.RecyclerView>
+
+    <!--
+    <com.padc.cooking.components.textviews.MMTextView
+        android:id="@+id/tv_article_description"
+        style="@style/ContentText"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:src="@drawable/meal"/>
+        android:layout_centerInParent="true"
+        android:padding="@dimen/margin_medium"
+        android:text="@string/food_ingredient_step1" />
+    <com.padc.cooking.components.textviews.MMTextView
+        android:id="@+id/tv_article_description"
+        style="@style/ContentText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:padding="@dimen/margin_medium"
+        android:text="@string/food_ingredient_step1" />
+    <com.padc.cooking.components.textviews.MMTextView
+        android:id="@+id/tv_article_description"
+        style="@style/ContentText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:padding="@dimen/margin_medium"
+        android:text="@string/food_ingredient_step1" />
+    <com.padc.cooking.components.textviews.MMTextView
+        android:id="@+id/tv_article_description"
+        style="@style/ContentText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:padding="@dimen/margin_medium"
+        android:text="@string/food_ingredient_step1" />
+    <com.padc.cooking.components.textviews.MMTextView
+        android:id="@+id/tv_article_description"
+        style="@style/ContentText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:padding="@dimen/margin_medium"
+        android:text="@string/food_ingredient_step1" />
+        !-->
+
+
 
 </LinearLayout>

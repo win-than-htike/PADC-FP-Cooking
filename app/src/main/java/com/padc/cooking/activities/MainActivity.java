@@ -3,9 +3,8 @@ package com.padc.cooking.activities;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
-import android.view.View;
 import android.support.design.widget.NavigationView;
+import android.support.design.widget.Snackbar;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
@@ -13,34 +12,26 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
-import android.widget.Spinner;
-import android.widget.SpinnerAdapter;
-import android.widget.TextView;
-import android.widget.Toast;
+import android.view.View;
 
-import com.padc.cooking.CookingApp;
 import com.padc.cooking.R;
 import com.padc.cooking.VO.MarketListVO;
-import com.padc.cooking.controllers.FoodItemController;
+
 import com.padc.cooking.controllers.UserController;
-import com.padc.cooking.fragments.HomeFragment;
+import com.padc.cooking.data.models.VO.RecipeVO;
 import com.padc.cooking.fragments.MarketListActivityFragment;
+import com.padc.cooking.fragments.MyanmarFragment;
 import com.padc.cooking.pods.ViewPodAccountControl;
 import com.padc.cooking.views.holders.MarketViewHolder;
+import com.padc.cooking.views.holders.RecipeViewHolder;
 
-import org.w3c.dom.Text;
-
-import butterknife.BindView;
 import butterknife.ButterKnife;
 
 public class MainActivity extends AppCompatActivity
-        implements NavigationView.OnNavigationItemSelectedListener, FoodItemController, MarketViewHolder.ControllerMarketItem,
+        implements NavigationView.OnNavigationItemSelectedListener,
+        RecipeViewHolder.RecipeItemController,
+        MarketViewHolder.ControllerMarketItem,
         UserController {
-
-    @BindView(R.id.toolbar_spinner)
-    Spinner toolbatSpinnerCategory;
 
     ViewPodAccountControl viewPodAccountControl;
 
@@ -54,24 +45,6 @@ public class MainActivity extends AppCompatActivity
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayShowTitleEnabled(false);
 
-        // spinner adapter with string array (setup)
-        SpinnerAdapter mSpinnerAdapter = ArrayAdapter.createFromResource(CookingApp.getContext(), R.array.category, R.layout.toolbar_spinner_dropdown_item);
-        toolbatSpinnerCategory.setAdapter(mSpinnerAdapter);
-
-        // listen chose item in spinner
-        toolbatSpinnerCategory.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-            @Override
-            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
-
-                Toast.makeText(getApplicationContext(), adapterView.getItemAtPosition(i).toString(), Toast.LENGTH_SHORT).show();
-
-            }
-
-            @Override
-            public void onNothingSelected(AdapterView<?> adapterView) {
-
-            }
-        });
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
@@ -83,10 +56,10 @@ public class MainActivity extends AppCompatActivity
         });
 
         if (savedInstanceState == null) {
-            HomeFragment homeFragment = new HomeFragment();
+            MyanmarFragment myanmarFragment = MyanmarFragment.newInstance();
             getSupportFragmentManager()
                     .beginTransaction()
-                    .replace(R.id.fl_container, homeFragment, "Home")
+                    .replace(R.id.fl_container, myanmarFragment, "Home")
                     .commit();
         }
 
@@ -166,15 +139,16 @@ public class MainActivity extends AppCompatActivity
     }
 
     private void navigateToReciepe() {
-        HomeFragment homeFragment = new HomeFragment();
+        getSupportActionBar().setTitle("Recipes");
+        MyanmarFragment myanmarFragment = MyanmarFragment.newInstance();
         getSupportFragmentManager()
                 .beginTransaction()
-                .replace(R.id.fl_container, homeFragment, "Home")
+                .replace(R.id.fl_container, myanmarFragment, "Home")
                 .commit();
     }
 
 
-    @Override
+
     public void onTapFoodItem() {
 
         startActivity(FoodDetailActivity.newIntent());
@@ -206,6 +180,11 @@ public class MainActivity extends AppCompatActivity
 
     @Override
     public void onNavigateUserProfile() {
+
+    }
+
+    @Override
+    public void onTapArticle(RecipeVO mRecipe) {
 
     }
 }

@@ -22,4 +22,11 @@
 
     <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 
+    <style name="ContentText">
+        <item name="android:textSize">@dimen/text_regular</item>
+        <item name="android:textColor">@color/black_overlay</item>
+        <item name="android:lineSpacingMultiplier">1.2</item>
+    </style>
+
+
 </resources>

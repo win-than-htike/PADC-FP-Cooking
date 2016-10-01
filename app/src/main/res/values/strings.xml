@@ -41,4 +41,19 @@
         <item>Japan</item>
     </string-array>
 
+
+    <!-- Food Ingredient List-->
+    <string name="food_ingredient_step1">၁။ ၾကက္သား - ၃၀ က်ပ္သား (အေနေတာ္ အတံုးေလးေတြလွီးထားပါ)</string>
+    <string name="food_ingredient_step2">၂။ ဘူးသီးနုႏု - ၁ လံုး (အေနေတာ္ အတံုးေလးေတြလွီးထားပါ)</string>
+    <string name="food_ingredient_step3">၃။ ခေနာၾကက္သားမႈန္႕ - ၁ စြန္း ခဲြ စားပဲြစြန္း (၁ စြန္း ၾကက္သားနယ္ရန္)</string>
+    <string name="food_ingredient_step4">၄။ နံနံပင္ - ၃ ပင္ (ခပ္ၾကမ္းၾကမ္းေလး လွီးထားပါ)</string>
+    <string name="food_ingredient_step5">၅။ ေရသန္႔ - ၁ ခြက္ ခဲြ (ဟင္းခ်က္ရန္တိုင္းေသာခြက္)၁။ ၾကက္သား - ၃၀ က်ပ္သား (အေနေတာ္ အတံုးေလးေတြလွီးထားပါ)</string>
+    <string name="food_ingredient_step6">၆။ သစ္ၾကပိုးမွႈန္႕ - ၁ စြန္း လက္ဖက္စြန္း</string>
+    <string name="food_ingredient_step7">၇။ ဆား - ၁/၃ ပံု စြန္း လက္ဖက္စြန္း</string>
+
+    <string name="recipe_name">ဘူးသီးႏုႏုႏွင့္ၾကက္သားကာလသားခ်က္</string>
+    <string name="ingredient">Ingredient</string>
+    <string name="method">Method</string>
+
+
 </resources>

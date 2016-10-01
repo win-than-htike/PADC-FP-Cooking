@@ -19,4 +19,8 @@
     <color name="text_white_ish">#EEE</color>
     <color name="white_full">#FFF</color>
 
+    <!-- overlays -->
+    <color name="black_overlay">#9000</color>
+    <color name="black_overlay_light">#6000</color>
+
 </resources>
